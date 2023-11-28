@@ -1,0 +1,8 @@
+streamlit 
+os
+pandas
+json
+psycopg2
+requests
+plotly
+numpy
