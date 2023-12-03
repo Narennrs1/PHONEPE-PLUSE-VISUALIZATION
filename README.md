@@ -12,8 +12,8 @@
 
 ## MODULES REQUIRED :
 * [Streamlit](https://docs.streamlit.io/) - To Create simple and interactive UI
-* [Plotly](https://dash.plotly.com/) -  To Creater pictorial of data
-* [Pandas](https://pandas.pydata.org/docs/) - To Create Data Frame for scarter data
+* [Plotly](https://dash.plotly.com/) -  To Create pictorial of data
+* [Pandas](https://pandas.pydata.org/docs/) - To Create a Data Frame for scatter data
 * [Json](https://docs.python.org/3/library/json.html) - To Import Dataset
 * [postgresql](https://www.postgresql.org/docs/) - To Transfer Data and store
 
@@ -32,7 +32,7 @@
     from PIL import Image ```
 # STEP 2 : 
 * IMPORTING DATA FROM Phonepe pulse -
-* DATA EXTRACTION AND TRANSFROMATION 
+* DATA EXTRACTION AND TRANSFORMATION 
   ```
   data
   |___ aggregated
@@ -59,7 +59,7 @@
                       |___ andhra-pradesh
                       |    ...
                       |    ...
-*  As the Data are in various folder which was show above we us for loop for retrieve the data. Initailly we get the patha and store the path in one variable to get it. After get the data we use for loop to get the desired data
+*  As the Data are in various folders which were shown above we use for loop to retrieve the data. Initially, we get the path and store the path in one variable to get it. After getting the data we use for loop to get the desired data
   ```
       #Aggregated Trandsaction
       path1="Path of json file"
@@ -92,9 +92,9 @@
     
       agre_trans=pd.DataFrame(columns1)
 ```
-* Once the was retrieved store it in dictionary and convert into dataframe by using pandas
+* Once the was retrieved store it in the dictionary and convert it into data frame by using pandas
 # STEP 3 :
-* Third step is to store the retrieved data in the database. I used postgresql for this project
+* The third step is to store the retrieved data in the database. I used Postgresql for this project
 ```
   #SQL Table creation 
   #Aggregated_transaction Table
@@ -134,11 +134,11 @@
       cursor.execute(insert,values)
       mydb.commit()
 ```
-* Initially create the table based the required data and transfer the values to the table which was created.
+* Initially create the table based on the required data and transfer the values to the table which was created.
 # STEP - 4
 # Data visualization : 
-* In this project i use Geo - map ,bar and pia chart for by vislization by using plotyly
-* GEO-Map - Choropleth. In this project i change the name of the states base on the geojson file.
+* In this project I used Geo-map, bar, and Pia chart for visualization by using Plotly
+* GEO-Map - Choropleth. In this project, I changed the name of the states based on the geojson file.
   ```
   url  ="https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson"
     response =requests.get(url)
@@ -168,8 +168,8 @@
     fig.update_layout(height=600,width=800)
     fig.show()
   ```
-  * Geo-Map show the transaction amount and count from 2018-2023. Which is easier for understanding
-  * PIA CHART - PIA chart is used in vasious aspest of the project like top 10 districts,top transaction ects.
+  * Geo-Map shows the transaction amount and counts from 2018-2023. Which is easier to understand
+  * PIA CHART - The PIA chart is used in various aspects of the project like top 10 districts, top transactions etc.
   ```
       lowt= agre_tran[["States","transaction_count"]]
       lowt1= lowt.groupby("States")["transaction_count"].sum().sort_values(ascending=False)
@@ -181,4 +181,12 @@
       return st.plotly_chart(fig_lt)
   ```
   # STEP 5 - DASHBOARD UI
-  # STREAMLIT - Streamlit is open source modules used in the project which is simple and clean to create an web-page.
+  * STREAMLIT - Streamlit is a simple and clean open-source module used in the project to create a web page.
+    ![image](web.jpg)
+
+# Key Point :
+ * Phonepe was launched in 2016 in Bangalore. Now It was geared up by taking 1.5M transactions and 3.2M transaction amounts across India.
+ *  The Application has most transactions in P2P payment and Merchant payments.
+ *  Bangalore holds 25.6% of transactions and the mobile brands in which the transaction takes place were Xiaomi and Samsung.
+## 
+**In This project we can explore more inference**
