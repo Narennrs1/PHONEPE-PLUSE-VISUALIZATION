@@ -190,3 +190,15 @@
  *  Bangalore holds 25.6% of transactions and the mobile brands in which the transaction takes place were Xiaomi and Samsung.
 ## 
 **In This project we can explore more inference**
+
+<p align="center">
+<b><em>TOP LANGUAGE:</em></b> <br/>
+
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Narennrs1&layout=compact)
+
+
+<p align="center">
+<b><em>Point of Contacting:</em></b> <br/>
+  
+<a href="mailto:narennrsj@gmail.com">![narennrsj@gamil.com](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)</a> <a href="<https://www.linkedin.com/in/narayana-ram-sekar-b689a9201/>">![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)</a>
