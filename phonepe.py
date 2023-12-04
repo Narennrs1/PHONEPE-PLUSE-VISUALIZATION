@@ -146,11 +146,6 @@ def geo_tc():
     response =requests.get(url)
     Gdata1=json.loads(response.content)
 
-    agre_tran.States=agre_tran.States.str.title()
-    agre_tran['States']=agre_tran['States'].replace(['Andaman-&-Nicobar-Islands'],'Andaman & Nicobar')
-    agre_tran['States']=agre_tran['States'].replace(['Dadra-&-Nagar-Haveli-&-Daman-&-Diu'],'Dadra and Nagar Haveli and Daman and Diu')
-    agre_tran['States']=agre_tran['States'].str.replace('-',' ')
-
     map2=agre_tran[['States','transaction_count','quater','year']]
     
     fig = px.choropleth(
@@ -178,18 +173,6 @@ def transaction_amt():
     fig_ty=px.bar(dfagty,x='transaction_type',y='transaction_amount',title="TRANSACTION TYPE",color_discrete_sequence=px.colors.sequential.Blackbody_r)
     fig_ty.update_layout(width=600,height=400)
     return st.plotly_chart(fig_ty)
-
-#REG_USER BY STATES
-def reg_states(state):
-    st0= map_use[["States","districts","registeredUsers"]]
-    st1= st0.loc[(st0["States"]==state)]
-    st2= st1[["districts", "registeredUsers"]]
-    st3= st2.groupby("districts")["registeredUsers"].sum()
-    state1= pd.DataFrame(st3).reset_index()
-    fig_st4= px.bar(state1, x= "districts", y= "registeredUsers", title= "DISTRICTS TO REGISTERED USER",
-                color_discrete_sequence=px.colors.sequential.Bluered_r)
-    fig_st4.update_layout(width= 1000, height= 500)
-    return st.plotly_chart(fig_st4)
 
 def trans_amt_yr(yr):
     url= "https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson"
@@ -264,28 +247,6 @@ def trans_amtby_yr(yr):
                     color_discrete_sequence=px.colors.sequential.BuPu_r)
     fig_cuyr.update_layout(width=600, height=500)
     return st.plotly_chart(fig_cuyr)
-
-def reg_st_amt(yr,state):
-    yr=int(yr)
-    st0= map_tran[["States","year","district","transaction_amount"]]
-    st1= st0.loc[(map_tran["States"]==state)&(map_tran["year"]==yr)]
-    st3= st1.groupby("district")["transaction_amount"].sum()
-    state1= pd.DataFrame(st3).reset_index()
-    fig_st4= px.bar(state1, x= "district", y= "transaction_amount", title= "DISTRICTS TO TRANSACTION",
-                color_discrete_sequence=px.colors.sequential.Aggrnyl_r)
-    fig_st4.update_layout(width= 1000, height= 500)
-    return st.plotly_chart(fig_st4)
-
-def reg_st_amt(yr,state):
-    yr=int(yr)
-    st0= map_tran[["States","year","district","transaction_amount"]]
-    st1= st0.loc[(map_tran["States"]==state)&(map_tran["year"]==yr)]
-    st3= st1.groupby("district")["transaction_amount"].sum()
-    state1= pd.DataFrame(st3).reset_index()
-    fig_st4= px.bar(state1, x= "district", y= "transaction_amount", title= "DISTRICTS TO TRANSACTION",
-                color_discrete_sequence=px.colors.sequential.Aggrnyl_r)
-    fig_st4.update_layout(width= 1000, height= 500)
-    return st.plotly_chart(fig_st4)
 
 # TOP QUESTION
 def qus1():
