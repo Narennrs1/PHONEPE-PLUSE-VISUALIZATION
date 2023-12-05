@@ -1,10 +1,10 @@
 ![Banner Image](/phone.svg)
 
 ## PHONEPE-PulSE-VISUALIZATION Data 2018-2023:
-* Phonepe-pulse is the dashboard built using Streamlit. Digital Payment has seen a huge surge in recent years 2k.Crs to 12K.Crs from 2018 to 2023. Post-Pandemic There was a revolution in the digital payment industry in India. Phonepe was launched in 2016 by Sameer Nigam, Rahul Chari, and Burzin Engineer. Phonepe Has around 45% market share in the Digital payment industry. This Dashboard will show all relevant information regarding Phonepe by using Geo-visualization and other visualizations for more interaction. The Dataset is available for free on the [PhonePe Pulse website](https://www.phonepe.com/pulse/explore/transaction/2022/4/) and [GitHub](https://github.com/PhonePe/pulse).
+* Phonepe-pulse is the dashboard built using Streamlit. Digital Payment has seen a huge surge in recent years 2k.Crs to 12K.Crs from 2018 to 2023. Post-Pandemic There was a revolution in the digital payment industry in India. Phonepe was launched in 2016 by Sameer Nigam, Rahul Chari, and Burzin Engineer. Phonepe Has around 48% market share in the Digital payment industry. This Dashboard will show all relevant information regarding Phonepe by using Geo-visualization and other visualizations for more interaction. The Dataset is available for free on the [PhonePe Pulse website](https://www.phonepe.com/pulse/explore/transaction/2022/4/) and [GitHub](https://github.com/PhonePe/pulse).
 
 
-## WANT TO WATCH VIDEO OF THE PROJECT : - [click here](https://www.linkedin.com/feed/update/urn:li:activity:7136725510591582208/)
+## WANT TO WATCH VIDEO OF THE PROJECT : - [click here](https://www.linkedin.com/posts/narayana-ram-sekar-b689a9201_guvi-guvigeeknetworksiitmresearchpark-activity-7137675483927760896-_KoS?utm_source=share&utm_medium=member_desktop)
 
 ## COMPARISON WITH OTHER DIGITAL PAYMENT:
 
