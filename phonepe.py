@@ -6,7 +6,7 @@ import psycopg2
 import requests
 import plotly.express as px
 import numpy as np
-
+from PIL import Image
 #SQL TABLE TO DATA FRAME
 
 mydb=psycopg2.connect(host='localhost',user='postgres',password='Sql0991',database='phonepe',port=5432)
@@ -146,6 +146,11 @@ def geo_tc():
     response =requests.get(url)
     Gdata1=json.loads(response.content)
 
+    agre_tran.States=agre_tran.States.str.title()
+    agre_tran['States']=agre_tran['States'].replace(['Andaman-&-Nicobar-Islands'],'Andaman & Nicobar')
+    agre_tran['States']=agre_tran['States'].replace(['Dadra-&-Nagar-Haveli-&-Daman-&-Diu'],'Dadra and Nagar Haveli and Daman and Diu')
+    agre_tran['States']=agre_tran['States'].str.replace('-',' ')
+
     map2=agre_tran[['States','transaction_count','quater','year']]
     
     fig = px.choropleth(
@@ -248,6 +253,7 @@ def trans_amtby_yr(yr):
     fig_cuyr.update_layout(width=600, height=500)
     return st.plotly_chart(fig_cuyr)
 
+
 # TOP QUESTION
 def qus1():
     brand= map_tran[["district","transaction_amount"]]
@@ -344,7 +350,6 @@ def qus10():
     return st.plotly_chart(fig_brd)
 
 st.set_page_config(layout="wide")
-
 st.header(":violet[PHONEPE DATA VISUALIZATION AND EXPLORAION]")
 st.caption(":violet[India's Leading Digital Payment And Banking Service Provider]")
 tab1,tab2,tab3=st.tabs(["***HOME***","***DATA VISUALIZATION***","***TOP DATA***"])
@@ -373,7 +378,7 @@ We resolved to demystify the what, why, and how of digital payments in India thi
                     )
 
     with st.container():
-        videofile=open("D:\\DTM9\\CAPSTONE PROJECT 2\\Phonepvideo.mp4",'rb')
+        videofile=open("D:\DTM9\CAPSTONE PROJECT 2\Phonepvideo.mp4",'rb')
         vid=videofile.read()
         st.video(vid)
 
